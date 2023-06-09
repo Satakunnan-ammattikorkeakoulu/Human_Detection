@@ -1,5 +1,5 @@
 CONDA:
-<delcd /tmp~~
+cd /tmp~~
 <del>ccurl -O https://repo.anaconda.com/archive/Anaconda3-2021.04-Linux-aarch64.sh</del>
 ~~chmod +x Anaconda3-2021.04-Linux-aarch64.sh~~
 ~~bash Anaconda3-5.2.0-Linux-x86.sh~~
