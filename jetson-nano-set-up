@@ -1,0 +1,28 @@
+CONDA:
+~~cd /tmp~~
+~~ccurl -O https://repo.anaconda.com/archive/Anaconda3-2021.04-Linux-aarch64.sh~~
+~~chmod +x Anaconda3-2021.04-Linux-aarch64.sh~~
+~~bash Anaconda3-5.2.0-Linux-x86.sh~~
+~~source /home/aiuser/anaconda3/bin/activate~~
+
+upper commnds didnt work, downloaded from here https://github.com/conda-forge/miniforge/releases
+Miniforge3-23.1.0-1-Linux-aarch64.sh
+bash Miniforge3-23.1.0-1-Linux-aarch64.sh
+source ~/.bashrc
+conda list (works)
+
+VSCODE:
+wget https://update.code.visualstudio.com/1.77.3/linux-deb-arm64/stable -O code.deb
+sudo dpkg -i code.deb
+sudo apt-get install -f
+
+TENSOR:
+https://www.tensorflow.org/install/pip
+conda install -c conda-forge cudatoolkit=11.8.0
+python3 -m pip install nvidia-cudnn-cu11==8.6.0.163 tensorflow==2.12.*
+mkdir -p $CONDA_PREFIX/etc/conda/activate.d
+echo 'CUDNN_PATH=$(dirname $(python -c "import nvidia.cudnn;print(nvidia.cudnn.__file__)"))' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+echo 'export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_PREFIX/lib/:$CUDNN_PATH/lib' >> $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+source $CONDA_PREFIX/etc/conda/activate.d/env_vars.sh
+# Verify install:
+python3 -c "import tensorflow as tf; print(tf.config.list_physical_devices('GPU'))"
