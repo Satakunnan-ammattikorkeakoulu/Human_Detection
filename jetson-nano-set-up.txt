@@ -1,11 +1,11 @@
-**CONDA(not working):**
+CONDA(not working):
 cd /tmp
 ccurl -O https://repo.anaconda.com/archive/Anaconda3-2021.04-Linux-aarch64.sh
 chmod +x Anaconda3-2021.04-Linux-aarch64.sh
 bash Anaconda3-5.2.0-Linux-x86.sh
 source /home/aiuser/anaconda3/bin/activate
 
-**CONDA(working):**
+CONDA(working):
 Download file Miniforge3-23.1.0-1-Linux-aarch64.sh
 from: https://github.com/conda-forge/miniforge/releases
 Then terminal:
@@ -13,12 +13,12 @@ bash Miniforge3-23.1.0-1-Linux-aarch64.sh
 source ~/.bashrc
 conda list (check if installation works)
 
-**VSCODE:**
+VSCODE:
 wget https://update.code.visualstudio.com/1.77.3/linux-deb-arm64/stable -O code.deb
 sudo dpkg -i code.deb
 sudo apt-get install -f
 
-**TENSOR:**
+TENSOR:
 https://www.tensorflow.org/install/pip
 conda install -c conda-forge cudatoolkit=11.8.0
 python3 -m pip install nvidia-cudnn-cu11==8.6.0.163 tensorflow==2.12.*
